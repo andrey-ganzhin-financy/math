@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ru" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Контакты Math Supply: адрес, телефон, почта, форма обратной связи.">
+  <title>Контакты — Math Supply</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="index.html">∑ Math Supply</a>
+
+      <nav class="site-nav" aria-label="Основная навигация">
+        <ul class="site-nav__list">
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="about.html">О магазине</a></li>
+          <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="contacts.html">Контакты</a></li>
+        </ul>
+      </nav>
+
+      <button class="btn btn-outline-primary position-relative cart-button" type="button" id="cart-button">
+        🛒 Корзина
+       <span class="badge bg-primary position-absolute top-0 start-100 translate-middle" id="cart-counter" aria-live="polite" hidden>0</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+      <a class="breadcrumbs__link" href="index.html">Главная</a>
+      <span class="breadcrumbs__current">Контакты</span>
+    </nav>
+
+    <section class="section">
+      <h1>Контакты</h1>
+      <p class="lead">
+        Есть вопрос по товарам или нужна помощь с выбором? Напиши нам — поможем с радостью.
+      </p>
+    </section>
+
+    <div class="section">
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <section class="contact-info">
+            <h2>Где мы и как с нами связаться</h2>
+
+            <div class="contact-info__row">
+              <span class="contact-info__icon">📍</span>
+              <div>
+                <h3>Адрес</h3>
+                <p class="text-muted mb-0">г. Москва, ул. Математическая, д. 7, офис 101 (м. «Университет»)</p>
+              </div>
+            </div>
+
+            <div class="contact-info__row">
+              <span class="contact-info__icon">📞</span>
+              <div>
+                <h3>Телефон</h3>
+                <p class="mb-0"><a href="tel:+79000000000">+7 (900) 000-00-00</a></p>
+              </div>
+            </div>
+
+            <div class="contact-info__row">
+              <span class="contact-info__icon">✉️</span>
+              <div>
+                <h3>Почта</h3>
+                <p class="mb-0"><a href="mailto:info@mathsupply.ru">info@mathsupply.ru</a></p>
+              </div>
+            </div>
+
+            <div class="contact-info__row">
+              <span class="contact-info__icon">🕒</span>
+              <div>
+                <h3>Часы работы</h3>
+                <p class="text-muted mb-0">Пн–Пт: 10:00–19:00<br>Сб: 11:00–17:00<br>Вс: выходной</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="mt-5">
+            <h3>Как нас найти</h3>
+            <p class="text-muted">
+              Мы находимся в 5 минутах пешком от метро «Университет». Вход со двора, ориентир — вывеска «Math Supply».
+            </p>
+
+            <!-- Карта -->
+            <div class="map-wrapper">
+              <iframe
+                class="map-wrapper__frame"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=37.5200%2C55.6940%2C37.5420%2C55.7060&layer=mapnik&marker=55.7000%2C37.5310"
+                loading="lazy"
+                title="Карта: Math Supply в Москве"
+              ></iframe>
+
+              <div class="map-wrapper__overlay">
+                <div class="map-wrapper__badge">∑ Math Supply</div>
+                <div class="map-wrapper__address">
+                  г. Москва, ул. Математическая, 7
+                  <small>м. «Университет» · 5 минут пешком</small>
+                </div>
+                <a
+                  class="map-wrapper__link"
+                  href="https://yandex.ru/maps/?text=Москва%20улица%20Математическая%207"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Открыть в Яндекс.Картах →
+                </a>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="col-lg-6">
+          <section class="contact-form-section">
+            <h2>Напишите нам</h2>
+            <p class="text-muted">
+              Заполните форму — ответим в течение 24 часов. Это учебный проект, данные никуда не отправляются.
+            </p>
+
+            <form id="contact-form" class="needs-validation" novalidate>
+              <div class="mb-3">
+                <label for="contact-name" class="form-label">Ваше имя</label>
+                <input type="text" class="form-control" id="contact-name" required minlength="2">
+                <div class="invalid-feedback">Введите имя (минимум 2 символа).</div>
+              </div>
+
+              <div class="mb-3">
+                <label for="contact-email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="contact-email" required>
+                <div class="invalid-feedback">Укажите корректный email.</div>
+              </div>
+
+              <div class="mb-3">
+                <label for="contact-subject" class="form-label">Тема сообщения</label>
+                <select class="form-select" id="contact-subject" required>
+                  <option value="" disabled selected>Выберите тему</option>
+                  <option value="order">Вопрос по заказу</option>
+                  <option value="catalog">Вопрос по каталогу</option>
+                  <option value="delivery">Вопрос по доставке</option>
+                  <option value="other">Другое</option>
+                </select>
+                <div class="invalid-feedback">Выберите тему сообщения.</div>
+              </div>
+
+              <div class="mb-4">
+                <label for="contact-message" class="form-label">Сообщение</label>
+                <textarea class="form-control" id="contact-message" rows="5" required minlength="10"></textarea>
+                <div class="invalid-feedback">Сообщение должно быть не короче 10 символов.</div>
+              </div>
+
+              <button type="submit" class="button button--primary w-100" id="contact-submit">Отправить</button>
+
+              <div id="contact-status" class="mt-3 text-center d-none" role="status"></div>
+            </form>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__brand">
+      <a class="site-footer__logo" href="index.html">
+        <span class="site-footer__logo-mark">∑</span>
+        Math Supply
+      </a>
+      <p class="site-footer__tagline">
+        Всё для доказательств: шпаргалки, карточки, блокноты и мерч — чтобы формулы жили рядом с тобой.
+      </p>
+    </div>
+
+    <div class="site-footer__col">
+      <h4>Магазин</h4>
+      <ul class="site-footer__links">
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="catalog.html">Каталог</a></li>
+        <li><a href="about.html">О магазине</a></li>
+        <li><a href="contacts.html">Контакты</a></li>
+      </ul>
+    </div>
+
+    <div class="site-footer__col">
+      <h4>Связаться</h4>
+      <ul class="site-footer__links">
+        <li><a href="tel:+79000000000">+7 (900) 000-00-00</a></li>
+        <li><a href="mailto:info@mathsupply.ru">info@mathsupply.ru</a></li>
+        <li><span>Москва, ул. Математическая, 7</span></li>
+        <li><span>Пн–Пт 10:00–19:00</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="site-footer__bottom">
+    <p class="site-footer__text">© 2026 Math Supply · Все права защищены</p>
+    <p class="site-footer__text">Сделано с 💜 к математике</p>
+  </div>
+</footer>
+
+  <button class="scroll-top" type="button" aria-label="Наверх" hidden>↑</button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+</body>
+</html>

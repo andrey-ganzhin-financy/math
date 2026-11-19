@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ru" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="О магазине Math Supply: кто мы, зачем мы и почему матан — это красиво.">
+  <title>О магазине — Math Supply</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="index.html">∑ Math Supply</a>
+
+      <nav class="site-nav" aria-label="Основная навигация">
+        <ul class="site-nav__list">
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
+          <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="about.html">О магазине</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
+        </ul>
+      </nav>
+
+      <button class="btn btn-outline-primary position-relative cart-button" type="button" id="cart-button">
+        🛒 Корзина
+        <span class="badge bg-primary position-absolute top-0 start-100 translate-middle" id="cart-counter" aria-live="polite" hidden>0</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+      <a class="breadcrumbs__link" href="index.html">Главная</a>
+      <span class="breadcrumbs__current">О магазине</span>
+    </nav>
+
+    <section class="section">
+      <h1>О Math Supply</h1>
+      <p class="lead">
+        Мы делаем математику осязаемой. Шпаргалки, карточки, блокноты и мерч — чтобы формулы жили не только на доске, но и рядом с тобой.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Наша философия</h2>
+
+      <blockquote class="aside-info">
+        <p>
+          <strong>Теорема о полезности.</strong> Если студент регулярно держит формулы под рукой (в виде карточек, постеров или на футболке), то вероятность вспомнить нужную формулу на экзамене возрастает.
+        </p>
+        <footer class="text-end mt-2 text-muted">— Math Supply, 2026</footer>
+      </blockquote>
+
+      <p>
+        Мы не пытаемся заменить учебник или лектора. Мы хотим, чтобы математика перестала быть «страшным словом». Пусть формулы будут красивыми, понятными и удобными.
+      </p>
+
+      <div class="row mt-4 g-4">
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body">
+              <h3 class="card-title">Для студентов</h3>
+              <p class="card-text">
+                Шпаргалки и карточки — чтобы быстро освежить материал. Блокноты — чтобы самому выводить формулы и не бояться ошибок.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body">
+              <h3 class="card-title">Для преподавателей</h3>
+              <p class="card-text">
+                Постеры — чтобы повесить в аудитории и обсуждать. Наборы карточек — для экспресс-опросов и разборов типовых ошибок.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body">
+              <h3 class="card-title">Для всех</h3>
+              <p class="card-text">
+                Мерч — чтобы показать, что математика может быть стильной. Пусть люди видят: ты не просто носишь футболку, ты носишь тождество.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Как мы работаем</h2>
+      <ol class="steps">
+        <li>
+          <span class="steps__num">1</span>
+          <div>
+            <h3>Разработка</h3>
+            <p>Сначала — содержание: формулы, примеры, структура. Дизайн — только после того, как всё математически верно.</p>
+          </div>
+        </li>
+        <li>
+          <span class="steps__num">2</span>
+          <div>
+            <h3>Печать</h3>
+            <p>Плотная бумага, матовая ламинация, качественная ткань — чтобы вещь хотелось держать в руках.</p>
+          </div>
+        </li>
+        <li>
+          <span class="steps__num">3</span>
+          <div>
+            <h3>Доставка</h3>
+            <p>Курьер по Москве или Почта России — чтобы ты мог начать готовиться к экзамену без задержек.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section class="section">
+      <h2>Почему это полезно (и немного про ряды Тейлора)</h2>
+      <p>
+        Возьмём, к примеру, разложение <code>sin(7x)</code> в ряд Тейлора. На экзамене ты не будешь выводить его с нуля, но если ты видел эту формулу 10 раз на постере и 5 раз на карточке — мозг её запомнит.
+      </p>
+      <p>
+        Наша цель — не дать тебе готовое решение, а дать удобные опоры, чтобы ты сам мог дойти до решения.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__brand">
+      <a class="site-footer__logo" href="index.html">
+        <span class="site-footer__logo-mark">∑</span>
+        Math Supply
+      </a>
+      <p class="site-footer__tagline">
+        Всё для доказательств: шпаргалки, карточки, блокноты и мерч — чтобы формулы жили рядом с тобой.
+      </p>
+    </div>
+
+    <div class="site-footer__col">
+      <h4>Магазин</h4>
+      <ul class="site-footer__links">
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="catalog.html">Каталог</a></li>
+        <li><a href="about.html">О магазине</a></li>
+        <li><a href="contacts.html">Контакты</a></li>
+      </ul>
+    </div>
+
+    <div class="site-footer__col">
+      <h4>Связаться</h4>
+      <ul class="site-footer__links">
+        <li><a href="tel:+79000000000">+7 (900) 000-00-00</a></li>
+        <li><a href="mailto:info@mathsupply.ru">info@mathsupply.ru</a></li>
+        <li><span>Москва, ул. Математическая, 7</span></li>
+        <li><span>Пн–Пт 10:00–19:00</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="site-footer__bottom">
+    <p class="site-footer__text">© 2026 Math Supply · Все права защищены</p>
+    <p class="site-footer__text">Сделано с 💜 к математике</p>
+  </div>
+</footer>
+
+  <button class="scroll-top" type="button" aria-label="Наверх" hidden>↑</button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+</body>
+</html>
