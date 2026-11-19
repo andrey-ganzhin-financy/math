@@ -74,24 +74,18 @@ function productCardHTML(p) {
     ? `<span class="product-card__price"><s>${p.oldPrice} ₽</s>${p.price} ₽</span>`
     : `<span class="product-card__price">${p.price} ₽</span>`;
 
-  // 1. Убрали loading="lazy", чтобы браузер не блокировал загрузку локальных картинок
-  // 2. Добавили alt="${p.title}" для скринридеров
-  const image = p.image
-    ? `<img src="${p.image}" alt="${p.title}" class="product-card__img" width="400" height="250">`
-    : '';
+  // Вставляем картинку как CSS-фон
+  const imageStyle = p.image ? `style="background-image: url('${p.image}'); background-size: cover; background-position: center;"` : '';
 
   return `
     ${badge}
-    <div class="product-card__image">
-      ${image}
-    </div>
+    <div class="product-card__image" ${imageStyle}></div> <!-- Тут нет тега <img> -->
     <div class="product-card__body">
       <h3 class="product-card__title">${p.title}</h3>
       <p class="product-card__description">${p.description}</p>
       <div class="product-card__footer">
         ${priceHTML}
-        <!-- 3. Добавили aria-label, чтобы скринридер читал, ЧТО именно мы добавляем -->
-        <button class="btn btn-outline-primary product-card__button" type="button" data-add-to-cart="${p.id}" aria-label="Добавить ${p.title} в корзину">В корзину</button>
+        <button class="btn btn-outline-primary product-card__button" type="button" data-add-to-cart="${p.id}">В корзину</button>
       </div>
     </div>
   `;
@@ -403,6 +397,43 @@ function initHeroSymbols() {
   symbols.innerHTML = '<span>π</span><span>∫</span><span>√</span><span>∞</span>';
   hero.appendChild(symbols);
 }
+// --- Переключение тёмной темы ---
+function initThemeToggle() {
+  const toggleBtn = document.getElementById('theme-toggle');
+  if (!toggleBtn) return;
+
+  const icon = toggleBtn.querySelector('.theme-toggle__icon');
+  const htmlEl = document.documentElement;
+
+  // 1. Проверяем, сохранил ли пользователь тему раньше
+  // 2. Если нет, смотрим настройки системы (тёмная или светлая у него в ОС)
+  const savedTheme = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const currentTheme = savedTheme || (prefersDark ? 'dark' : 'light');
+
+  // Применяем тему при загрузке страницы
+  applyTheme(currentTheme);
+
+  // Клик по кнопке
+  toggleBtn.addEventListener('click', () => {
+    const newTheme = htmlEl.getAttribute('data-bs-theme') === 'dark' ? 'light' : 'dark';
+    applyTheme(newTheme);
+  });
+
+  function applyTheme(theme) {
+    // Меняем атрибут у тега <html>, Bootstrap сразу перекрасит всё
+    htmlEl.setAttribute('data-bs-theme', theme);
+    // Сохраняем выбор в память браузера
+    localStorage.setItem('theme', theme);
+    
+    // Меняем иконку (Луна для светлой, Солнце для тёмной)
+    if (icon) {
+      icon.textContent = theme === 'dark' ? '☀️' : '🌙';
+      icon.style.display = 'inline-block';
+      icon.style.animation = 'popIn 0.3s ease'; // Легкая анимация
+    }
+  }
+}
 
 // --- Запуск ---
 document.addEventListener('DOMContentLoaded', () => {
@@ -415,4 +446,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initContactForm();
   initHeroSymbols();
   initScrollReveal();
+  initThemeToggle();
 });
